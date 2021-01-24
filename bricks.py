@@ -33,7 +33,8 @@ while True:
     layer1 = []  # Instantiate an empty array for the positions of bricks in layer 1
     bricks = {}  # Instantiate an empty dictionary used to check the number of occurrence of each brick id
     print("Please, enter bricks description row by row:")
-    for _ in range(N):
+    i = 0
+    while i < N:
         row = list(map(int, input().rstrip().split()))
         # Check if the required number of brick ids are provided
         if len(row) != M:
@@ -43,7 +44,7 @@ while True:
         for number in row:
             bricks[number] = 1 if number not in bricks.keys() else bricks[number] + 1
         layer1.append(row)  # Add the row of brick ids to variable layer1
-
+        i += 1
     if check_bricks(bricks):
         break
 
